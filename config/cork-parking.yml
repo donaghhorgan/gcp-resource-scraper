@@ -1,0 +1,23 @@
+logging:
+  version: 1
+  handlers:
+    console:
+      class: logging.StreamHandler
+      stream: ext://sys.stdout
+  loggers:
+    '':
+      handlers:
+        - console
+      level: INFO
+
+gcp:
+  project: cork-open-data
+  firestore:
+    collection: parking
+
+interval: 60
+
+resource:
+  url: https://data.corkcity.ie/api/action/datastore_search
+  params:
+    resource_id: 6cc1028e-7388-4bc5-95b7-667a59aa76dc
